@@ -5,11 +5,11 @@ import json
 from flask.globals import request
 app = Flask(__name__)
 
-@app.route("/conveter", methods=['POST', 'GET'])
+@app.route("/converter", methods=['POST', 'GET'])
 
 
 
-def amountConveter():
+def amountConverter():
     if(request.method == 'POST'):
         myHeadders = {"Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY0MzAwMjIsImlhdCI6MTYyNTEzNDAyMiwic2NvcGUiOiJleGNoYW5nZV9yYXRlIiwicGVybWlzc2lvbiI6MH0.t8rpb-us2yYPJn--D8TJusiOykW-MYzF6j1X7HFFJF8"}
         response =  .get("https://vapi.vnappmob.com/api/v2/exchange_rate/sbv", headers = myHeadders)
