@@ -1,2 +1,1 @@
-heroku run --a test-exercise-adn
-python index.py
+web: python index.py
