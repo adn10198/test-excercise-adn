@@ -5,14 +5,14 @@ import json
 from flask.globals import request
 app = Flask(__name__)
 
-@app.route("/converter", methods=['POST', 'GET'])
+@app.route("/conveter", methods=['POST', 'GET'])
 
 
 
-def amountConverter():
+def amountConveter():
     if(request.method == 'POST'):
         myHeadders = {"Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY0MzAwMjIsImlhdCI6MTYyNTEzNDAyMiwic2NvcGUiOiJleGNoYW5nZV9yYXRlIiwicGVybWlzc2lvbiI6MH0.t8rpb-us2yYPJn--D8TJusiOykW-MYzF6j1X7HFFJF8"}
-        response =  .get("https://vapi.vnappmob.com/api/v2/exchange_rate/sbv", headers = myHeadders)
+        response = requests.get("https://vapi.vnappmob.com/api/v2/exchange_rate/sbv", headers = myHeadders)
         form = request.form
         moneyAmount = form.get('moneyAmount')
         currencyUnit = form.get('currencyUnit')
